@@ -1,151 +1,72 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
-      </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
-        </p>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
+  <v-app>
+    <!-- <v-app-bar
+      app
+      color="primary"
+      dark
+    /> -->
+    <v-card
+      max-width="400"
+      class="mx-auto my-auto"
+      hover
+    >
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
       >
-        <h2 class="headline font-weight-bold mb-3">
-          What's next?
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
+        <v-carousel-item
+          v-for="(slide, i) in slides"
+          :key="i"
+        >
+          <v-sheet
+            :color="colors[i]"
+            height="100%"
           >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+            >
+              <!-- <div class="display-3">{{ slide }} Slide</div> -->
+              <div class="display-3"><img v-bind:src="slide"></div>
+            </v-row>
+          </v-sheet>
+        </v-carousel-item>
+      </v-carousel>
+      <v-card-title>My Carousel</v-card-title>
+      <v-card-subtitle class="font-italic font-weight-black">fkkbm</v-card-subtitle>
+      <v-avatar class="mx-6">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg"
+          alt="Fkkbm"
+        >
+      </v-avatar>
+      <v-card-text>この美しい写真は決して私が撮影したものではない。しかしこの場所が素晴らしいことを誰もが分かる写真であり私が最もこの写真を素晴らしいと思っているから顔出ししたんだよ。</v-card-text>
+    </v-card>
+  </v-app>
 </template>
 
 <script>
   export default {
-    name: 'HelloWorld',
-
-    data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
-        },
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-        },
-      ],
-    }),
+    data () {
+      return {
+        colors: [
+          'indigo',
+          'warning',
+          'pink darken-2',
+          'red lighten-1',
+          'deep-purple accent-4',
+        ],
+        slides: [
+          'https://cdn.pixabay.com/photo/2017/12/17/19/08/bridge-3024773_960_720.jpg',
+          'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_960_720.jpg',
+          'https://cdn.pixabay.com/photo/2012/08/06/00/53/bridge-53769_960_720.jpg',
+          'https://cdn.pixabay.com/photo/2013/04/03/12/05/tree-99852_960_720.jpg',
+          'https://cdn.pixabay.com/photo/2017/04/09/09/56/avenue-2215317_960_720.jpg',
+        ],
+      }
+    },
   }
 </script>
