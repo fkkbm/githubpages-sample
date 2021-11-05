@@ -1,7 +1,7 @@
 module.exports = {
   outputDir: 'docs',
-  assetsDir: './',
-  publicPath: './githubpages-sample',
+  publicPath: '/githubpages-sample',
+  productionSourceMap: false,
   transpileDependencies: [
     'vuetify'
   ]
