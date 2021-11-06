@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
-import History from '@/views/History.vue'
-
+import History from '@/views/History/History.vue'
+import TEST1 from '@/views/History/TEST1.vue'
+import TEST2 from '@/views/History/TEST2.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,9 +21,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
   },
   {
-    path: '/history',
+    path: '/history/:id',
     name: 'History',
-    component: History
+    component: History,
+    children: [
+      {
+        path: 'test1',
+        component: TEST1
+      },{
+        path: 'test2',
+        component: TEST2
+      }
+    ]
   }
 ]
 

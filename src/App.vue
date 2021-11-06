@@ -7,7 +7,7 @@
       <router-link to="/about"><v-btn class="ma-2">
         About<v-icon small>mdi-pencil</v-icon>
       </v-btn></router-link>
-      <router-link to="/history"><v-btn class="ma-2">
+      <router-link to="/history/12345"><v-btn class="ma-2">
         history<v-icon small>mdi-book</v-icon>
       </v-btn></router-link>
     </div>
