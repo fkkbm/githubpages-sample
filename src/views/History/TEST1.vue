@@ -1,7 +1,7 @@
 <template>
   <div class="test1">
     <v-container>
-      <v-row class="grey lighten-3" style="height: 100px" stype="background-color: 'grey'">
+      <v-row class="grey lighten-3" style="height: 100px">
         <v-col cols="12" sm="6" md="4" lg="3" xl="3" style="background-color: #ffcdd2">
           row1 column 1
         </v-col>
