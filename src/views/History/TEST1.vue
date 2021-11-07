@@ -1,7 +1,7 @@
 <template>
   <div class="test1">
     <v-container>
-      <v-row class="grey lighten-3" style="height: 100px">
+      <v-row class="grey lighten-3" style="height: 300px">
         <v-col cols="12" sm="6" md="4" lg="3" xl="2" style="background-color: #ffcdd2">
           row1 column 1
         </v-col>
@@ -20,8 +20,11 @@
         <v-col cols="12" sm="6" md="4" lg="3" xl="2" style="background-color: #bbdefb">
           row1 column 6
         </v-col>
+        <v-col cols="12" sm="6" md="4" lg="3" xl="2" style="background-color: #B3E5FC">
+          row1 column 7
+        </v-col>
       </v-row>
-      <v-row class="grey lighten-3" style="height: 100px">
+      <v-row class="grey lighten-3" style="height: 300px">
         <v-col cols="6" sm="4" md="3" lg="2" xl="1" style="background-color: #ffcdd2">
           row2 column 1
         </v-col>
@@ -39,6 +42,9 @@
         </v-col>
         <v-col cols="6" sm="4" md="3" lg="2" xl="1" style="background-color: #bbdefb">
           row2 column 6
+        </v-col>
+        <v-col cols="6" sm="4" md="3" lg="2" xl="1" style="background-color: #B3E5FC">
+          row2 column 7
         </v-col>
       </v-row>
     </v-container>
